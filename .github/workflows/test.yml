@@ -7,15 +7,15 @@ name: Test
 on:
   workflow_dispatch:
     inputs:
-      project:
-        description: Project
-        type: environment
-        # required: true
-
-      # environment:
+      # project:
       #   description: Project
       #   type: environment
       #   required: true
+
+      project:
+        description: Project
+        type: string
+        required: true
 
 jobs:
   test:
