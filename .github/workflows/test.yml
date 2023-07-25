@@ -9,17 +9,17 @@ on:
     inputs:
       project:
         description: Project
-        type: string
-        required: true
-
-      environment:
-        description: Project
         type: environment
         required: true
 
+      # environment:
+      #   description: Project
+      #   type: environment
+      #   required: true
+
 jobs:
   test:
-    environment: ${{ inputs.environment }}
+    environment: ${{ inputs.project }}
     runs-on: ubuntu-latest
     outputs:
       outputA: "hello"
