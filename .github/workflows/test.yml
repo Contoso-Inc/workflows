@@ -10,7 +10,7 @@ on:
       project:
         description: Project
         type: environment
-        required: true
+        # required: true
 
       # environment:
       #   description: Project
