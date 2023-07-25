@@ -12,8 +12,14 @@ on:
         type: string
         required: true
 
+      environment:
+        description: Project
+        type: environment
+        required: true
+
 jobs:
   test:
+    environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     outputs:
       outputA: "hello"
