@@ -1,0 +1,24 @@
+name: Test
+
+# permissions:
+#   id-token: write
+#   contents: read
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: Project
+        type: string
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    outputs:
+      outputA: "hello"
+      outputB: "goodbye"
+
+    steps:
+      - name: print
+        run: echo "${{ inputs.project }}"
