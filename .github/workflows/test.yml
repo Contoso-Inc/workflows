@@ -5,11 +5,14 @@ name: Test
 #   contents: read
 
 on:
+  pull_request:
+    branches: [main]
+
   push:
     branches:
       - master
       - "dev/*"
-      - 'feature/*'
+      - "feature/*"
 
   workflow_dispatch:
     inputs:
@@ -27,7 +30,7 @@ on:
         description: Environment
         type: environment
         required: true
-        default: 'dev'
+        default: "dev"
 
 jobs:
   test:
