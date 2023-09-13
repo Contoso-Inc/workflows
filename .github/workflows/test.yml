@@ -30,7 +30,11 @@ on:
         description: The GitHub Environment to deploy to
         type: environment
         required: true
-        default: 'dev'
+        default: 'Radio'
+      somenumber:
+        description: A number
+        type: number
+        required: true
 
 jobs:
   test:
