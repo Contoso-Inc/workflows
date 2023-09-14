@@ -35,6 +35,12 @@ on:
         description: A number
         type: number
         required: true
+      somebool:
+        description: A boolean
+        type: boolean
+        required: true
+
+
 
 jobs:
   test:
