@@ -21,7 +21,7 @@ on:
         default: 'Radio'
 
 jobs:
-  test:
+  talk:
     environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     outputs:
