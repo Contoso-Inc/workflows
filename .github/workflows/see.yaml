@@ -1,0 +1,17 @@
+name: foo
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: Who would you like to say hello to?
+        type: string
+        required: true
+
+jobs:
+  talk:
+    runs-on: ubuntu-latest
+    outputs:
+      outputA: 'hello'
+      outputB: 'goodbye'
+    steps:
+      - run: echo hello
