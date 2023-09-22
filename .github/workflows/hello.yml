@@ -1,0 +1,32 @@
+name: Say Hello
+
+run-name: Hello ${{ inputs.name }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: Who would you like to say hello to?
+        type: string
+        required: true
+      yell:
+        description: Would you like to yell?
+        type: boolean
+        required: false
+        default: false
+      environment:
+        description: The GitHub Environment to deploy to
+        type: environment
+        required: true
+        default: 'Radio'
+
+jobs:
+  test:
+    environment: ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    outputs:
+      outputA: 'hello'
+      outputB: 'goodbye'
+
+    steps:
+      - run: echo "### Hello ${{ inputs.name }}! :rocket:" >> $GITHUB_STEP_SUMMARY
