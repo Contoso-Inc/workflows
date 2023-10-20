@@ -1,0 +1,22 @@
+name: Test Inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: Project
+        type: string
+        required: true
+      entity_ref_environment:
+        description: Environment
+        default: environment
+        type: string
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello world"
+      - run: exho "${{ inputs.repository }}"
+      - run: echo "${{ inputs.entity_ref_environment }}"
+      - run: echo "${{ fromJson(inputs.entity_ref_environment) }}"
