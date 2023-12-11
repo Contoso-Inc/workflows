@@ -1,0 +1,25 @@
+name: Long Running
+
+run-name: LRO (${{ inputs.seconds }} seconds)
+
+on:
+  workflow_dispatch:
+    inputs:
+      seconds:
+        description: How many seconds to delay before completing?
+        type: number
+        required: true
+        default: 180
+
+jobs:
+  lro:
+    runs-on: ubuntu-latest
+
+    steps:
+      - shell: python
+        run: |
+
+          import time
+          print(f"Sleeping for ${{ inputs.seconds }} seconds")
+          time.sleep(${{ inputs.seconds }})
+          print("Done!")
