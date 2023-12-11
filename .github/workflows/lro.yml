@@ -11,6 +11,9 @@ on:
         required: true
         default: 180
 
+env:
+  description: This workflow is used to test long running workflows. It sleeps for the specified number of seconds and then completes successfully.
+
 jobs:
   lro:
     runs-on: ubuntu-latest
