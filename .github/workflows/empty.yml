@@ -1,26 +1,24 @@
 name: Empty
 
-# permissions:
-#   id-token: write
-#   contents: read
-
 on:
   workflow_dispatch:
   pull_request:
     branches: [main]
-
   push:
     branches:
       - master
-      - "dev/*"
-      - "feature/*"
+      - 'dev/*'
+      - 'feature/*'
+
+env:
+  description: This workflow is used to test the GitHub Actions API. It does not do anything useful, but it can be triggered quickly because it has not inputs.
 
 jobs:
   test:
     runs-on: ubuntu-latest
     outputs:
-      outputA: "hello"
-      outputB: "goodbye"
+      outputA: 'hello'
+      outputB: 'goodbye'
 
     steps:
       - name: print
