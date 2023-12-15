@@ -1,0 +1,43 @@
+name: NotifyTeam
+
+run-name: NotifyTeam ${{ inputs.name }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: Which team needs to be notified?
+        type: string
+        required: true
+      yell:
+        description: Would you like to mark as urgent?
+        type: boolean
+        required: false
+        default: false
+      environment:
+        description: The Azure Deployment Environment to use
+        type: environment
+        required: true
+        default: 'Dev'
+     
+
+jobs:
+  talk:
+    environment: ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    outputs:
+      outputA: 'hello'
+      outputB: 'goodbye'
+
+    steps:
+      - run: echo "### Hello ${{ inputs.name }}! :rocket:" >> $GITHUB_STEP_SUMMARY
+      - name: Notify Team
+        uses: aliencube/microsoft-teams-actions@v0.8.0
+        with:
+          webhook_uri: https://microsoft.webhook.office.com/webhookb2/5832d9ce-abb9-4365-b7ad-aed71f4b4c4e@72f988bf-86f1-41af-91ab-2d7cd011db47/IncomingWebhook/63984e0de4664818aa6269b4efb23667/468de9ca-dc45-4851-b241-6262acb69aa4
+          title: Platy copilot says...
+          summary: Repo TLC
+          text: "Hi team ${{inputs.name}}, your github repo needs some TLC!" 
+          sections: '[{ "activityTitle": "Repository Maintenance Required" },{"activityImage":"https://logos-world.net/wp-content/uploads/2023/10/Microsoft-Copilot-Logo-500x281.png"},{ "activitySubtitle":"There is something fishy going on..." },{ "activityText":"A potential breach of policy has occured in your repo. You appear to have gone outside of the guardrails established by your platform engineering team." }]'
+          actions: '[{ "@type": "OpenUri", "name": "GoTo Repo", "targets": [{ "os": "default", "uri": "https://github.com/microsoft/developer-platform" }]}]'
+
