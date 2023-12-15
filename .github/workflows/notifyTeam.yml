@@ -10,7 +10,7 @@ on:
         type: string
         required: true
       yell:
-        description: Would you like to yell?
+        description: Would you like to mark as urgent?
         type: boolean
         required: false
         default: false
