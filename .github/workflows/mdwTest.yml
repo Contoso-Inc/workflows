@@ -39,4 +39,5 @@ jobs:
           summary: Repo TLC
           text: "Hi ${{inputs.name}}, your github repo needs some TLC!" 
           sections: '[{ "activityTitle": "Repository Maintenance Required" },{"activityImage":"https://logos-world.net/wp-content/uploads/2023/10/Microsoft-Copilot-Logo-500x281.png"},{ "activitySubtitle":"There is something fishy going on..." },{ "activityText":"A potential breach of policy has occured in your repo. You appear to have gone outside of the guardrails established by your platform engineering team." }]'
-          
+          actions: '[{ "@type": "OpenUri", "name": "GoTo Repo", "targets": [{ "os": "default", "uri": "https://github.com/microsoft/developer-platform" }]}]'
+
