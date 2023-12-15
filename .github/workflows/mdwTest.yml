@@ -37,8 +37,3 @@ jobs:
           webhook_uri: https://microsoft.webhook.office.com/webhookb2/5832d9ce-abb9-4365-b7ad-aed71f4b4c4e@72f988bf-86f1-41af-91ab-2d7cd011db47/IncomingWebhook/51fd284978a64042928b294e2bd8cdbd/468de9ca-dc45-4851-b241-6262acb69aa4
           title: Testing 123
           summary: Hello and Goodbye
-          text: "I don't know why you say goodbye I say hello"
-          theme_color: blue
-          sections: '[{ "activityTitle": "hello world" }, { ... }]'
-          actions: '[{ "@type": "OpenUri", "name": "lorem ipsum", "targets": [{ "os": "default", "uri": "https://localhost" }] }, { ... }]'
-  
