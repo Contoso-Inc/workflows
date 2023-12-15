@@ -34,7 +34,7 @@ jobs:
       - name: Notify Team
         uses: aliencube/microsoft-teams-actions@v0.8.0
         with:
-          webhook_uri: https://microsoft.webhook.office.com/webhookb2/5832d9ce-abb9-4365-b7ad-aed71f4b4c4e@72f988bf-86f1-41af-91ab-2d7cd011db47/IncomingWebhook/63984e0de4664818aa6269b4efb23667/468de9ca-dc45-4851-b241-6262acb69aa4
+          webhook_uri: https://microsoft.webhook.office.com/webhookb2/6658b91d-1127-469c-aa49-f6bc7604241f@72f988bf-86f1-41af-91ab-2d7cd011db47/IncomingWebhook/fcf10042450c4fe78720174ebb12e2f4/468de9ca-dc45-4851-b241-6262acb69aa4
           title: Platy copilot says...
           summary: Repo TLC
           text: "Hi team ${{inputs.name}}, your github repo needs some TLC!" 
