@@ -19,7 +19,9 @@ on:
         type: environment
         required: true
         default: 'Dev'
-     
+
+env:
+  description: This workflow is used to test notify team.
 
 jobs:
   talk:
