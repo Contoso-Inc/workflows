@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: Who would you like to say hello to?
+        description: Which team needs to be notified?
         type: string
         required: true
       yell:
@@ -15,7 +15,7 @@ on:
         required: false
         default: false
       environment:
-        description: The GitHub Environment to deploy to
+        description: The Azure Deployment Environment to use
         type: environment
         required: true
         default: 'Dev'
