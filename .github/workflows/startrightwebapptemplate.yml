@@ -23,12 +23,12 @@ jobs:
     environment: ${{ inputs.project-name }}
     runs-on: ubuntu-latest
     outputs:
-      outputA: ${{project-name}}
-      outputB: ${{project-id}}
-      outputC: ${{project-url}}
-      outputD: ${{project-repository-url}}
+      outputA: ${{ inputs.project-name }}
+      outputB: ${{ env.project-id }}
+      outputC: ${{ env.project-url }}
+      outputD: ${{ env.project-repository-url }}
 
     steps:
       - run: echo "### Your new project ${{ inputs.project-name }} has been setup! :checkered_flag:" >> $GITHUB_STEP_SUMMARY
-      - run: echo "### You can browse it here ${{ project-url }} :blush:" >> $GITHUB_STEP_SUMMARY
-      - run: echo "### Try it out > azd init -t ${{ project-repository-url }} && azd up >> $GITHUB_STEP_SUMMARY
+      - run: echo "### You can browse it here ${{ env.project-url }} :blush:" >> $GITHUB_STEP_SUMMARY
+      - run: echo "### Try it out > azd init -t ${{ env.project-repository-url }} && azd up >> $GITHUB_STEP_SUMMARY
