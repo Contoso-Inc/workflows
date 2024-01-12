@@ -1,6 +1,6 @@
 name: Start Right Web App Template
 
-run-name: SRT-WebApp ${{ inputs.name }}
+run-name: SRT-WebApp ${{ inputs.project-name }}
 
 env:
     description: This is the Contoso approved template for new web app projects that are compliant with our organizational guidelines and policies. It will create all the required artifacts, including a fully compliant GitHub repository, actions workflows, Azure deployment environments, and more. In addition, it will register your project with "Platypus," the Contoso Developer Platform, so that it can be discovered and shared internally.
