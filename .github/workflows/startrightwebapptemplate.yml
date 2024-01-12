@@ -31,4 +31,4 @@ jobs:
     steps:
       - run: echo "### Your new project ${{ inputs.project-name }} has been setup! :checkered_flag:" >> $GITHUB_STEP_SUMMARY
       - run: echo "### You can browse it here ${{ env.project-url }} :blush:" >> $GITHUB_STEP_SUMMARY
-      - run: echo "### Try it out now! 'azd init -t ${{ env.project-repository-url }} && azd up' >> $GITHUB_STEP_SUMMARY
+      - run: echo "### Try it out now! azd init -t ${{ env.project-repository-url }} >> $GITHUB_STEP_SUMMARY
