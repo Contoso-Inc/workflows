@@ -20,7 +20,9 @@ on:
         required: true
         default: 'Dev'
      
-
+env:
+  description: Send a teams message to notify your colleagues of important information.
+  
 jobs:
   talk:
     environment: ${{ inputs.environment }}
