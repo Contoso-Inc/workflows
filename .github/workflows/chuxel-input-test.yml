@@ -8,7 +8,11 @@ on:
         type: string
         required: true
       some_value:
-        description: An identifyer in the form of with a regex of ^[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}$
+        description: An identifer (with a regex of ^[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}$)
+        type: string
+        required: true
+      some_other_value:
+        description: Another identifier (that is a a GUID or UUID)
         type: string
         required: false
 
