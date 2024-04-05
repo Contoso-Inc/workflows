@@ -3,15 +3,15 @@ name: Various input tests
 on:
   workflow_dispatch:
     inputs:
-      ref_repo:
+      repository:
         description: Target repository for operaiton
         type: string
         required: true
-      some_value:
+      some-value:
         description: An identifer (with a regex of ^[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}$)
         type: string
         required: true
-      some_other_value:
+      some-other-value:
         description: Another identifier (that is a a GUID or UUID)
         type: string
         required: false
