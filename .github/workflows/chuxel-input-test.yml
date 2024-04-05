@@ -7,11 +7,11 @@ on:
         description: Target repository for operaiton
         type: string
         required: true
-      some-value:
+      someValue:
         description: An identifer (with a regex of ^[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}$)
         type: string
         required: true
-      some-other-value:
+      someOtherValue:
         description: Another identifier (that is a a GUID or UUID)
         type: string
         required: false
