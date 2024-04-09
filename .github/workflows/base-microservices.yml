@@ -1,0 +1,34 @@
+name: Base Microservices Project Template
+
+run-name: STRT-MicroSvcProject ${{ inputs.project-name }}
+
+env:
+    description: This is the Contoso approved template for new microservice development efforts that are compliant with our organizational guidelines and policies. It will create all the required artifacts, including a fully compliant GitHub repository and action workflows for CI/CD. This project will use an Azure Dev Center project and Deployment Environment. The deployment environmentis configured with Azure Container Apps and includes a Postgres Database, Redis cache, and Container Registry. The project will also be configured for use with the Azure Developer CLI.
+    project-id: '123456'
+    project-url: 'https://this-is-not-a-portal.azurewebsites.net/project?id=123456'
+    project-repository-url: 'https://github.com/Contoso-Inc/mdwtestise'
+  
+
+on:
+  workflow_dispatch:
+    inputs:
+      project-name:
+        description: Please give your new project a name?
+        type: string
+        required: true
+
+
+jobs:
+  setup-project:
+    environment: ${{ inputs.project-name }}
+    runs-on: ubuntu-latest
+    outputs:
+      outputA: ${{ inputs.project-name }}
+      outputB: ${{ env.project-id }}
+      outputC: ${{ env.project-url }}
+      outputD: ${{ env.project-repository-url }}
+
+    steps:
+      - run: echo "### Your new project ${{ inputs.project-name }} has been setup! :checkered_flag:" >> $GITHUB_STEP_SUMMARY
+      - run: echo "### You can browse it here ${{ env.project-url }} :blush:" >> $GITHUB_STEP_SUMMARY
+      - run: echo "### Try it out now! azd init -t ${{ env.project-repository-url }}" >> $GITHUB_STEP_SUMMARY
