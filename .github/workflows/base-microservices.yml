@@ -1,9 +1,9 @@
-name: Base Microservices Project Template
+name: Base Microservices Application Template
 
 run-name: STRT-MicroSvcProject ${{ inputs.project-name }}
 
 env:
-    description: This is the Contoso approved template for new microservice development efforts that are compliant with our organizational guidelines and policies. It will create all the required artifacts, including a fully compliant GitHub repository and action workflows for CI/CD. This project will use an Azure Dev Center project and Deployment Environment. The deployment environmentis configured with Azure Container Apps and includes a Postgres Database, Redis cache, and Container Registry. The project will also be configured for use with the Azure Developer CLI.
+    description: This is the Contoso approved template for new microservice application that is compliant with our organizational guidelines and policies. It will create all the required artifacts, including a fully compliant GitHub repository and action workflows for CI/CD. This project will use an Azure Dev Center project and Deployment Environment. The deployment environmentis configured with Azure Container Apps and includes a Postgres Database, Redis cache, and Container Registry. The project will also be configured for use with the Azure Developer CLI.
     project-id: '123456'
     project-url: 'https://this-is-not-a-portal.azurewebsites.net/project?id=123456'
     project-repository-url: 'https://github.com/Contoso-Inc/mdwtestise'
