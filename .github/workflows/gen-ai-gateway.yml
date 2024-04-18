@@ -2,7 +2,17 @@ name: Gen AI Gateway
 
 on:
   workflow_dispatch:
-
+    inputs:
+      enable_token_limits:
+        description: Would you like to enable the default token limits?
+        type: boolean
+        required: false
+        default: true
+      enable_load_balancing:
+        description: Would you like to enable the load balancing?
+        type: boolean
+        required: false
+        default: true
 env:
   description: This workflow is used to enable the Gen AI Gateway for an intelligent app. It will update the application AI endpoint to flow traffic through the Gen AI Gateway, enabling load balancing, token usage metrics, and 
 
