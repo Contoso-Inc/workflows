@@ -9,7 +9,7 @@ on:
         required: true
         default: 1001
       enable_token_metrics:
-        description: Please select which token metrics to enable:
+        description: Please select which token metrics to enable
         type: choice
         required: false
         options:
