@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  description: This workflow is used to enable the Gen AI Gateway for an intelligetn application. It will update the application AI endpoint to flow traffic through the Gen AI Gateway, enabling load balancing, token usage metrics, and 
+  description: This workflow is used to enable the Gen AI Gateway for an intelligent app. It will update the application AI endpoint to flow traffic through the Gen AI Gateway, enabling load balancing, token usage metrics, and 
 
 jobs:
   test:
