@@ -26,12 +26,17 @@ on:
 env:
   description: This workflow is used to apply the OpenAI Token Limit Policy for your intelligent app. It leverages the Gen AI Gateway to apply Contoso's token limits. The supported models are text-embedding-3-large, text-embedding-3-small, text-embedding-ada-002. The default token limit is XYZ. Please note that requests for tokens above nnn will require approval from the Contoso AI team. 
 jobs:
-  test:
+  enable_gen_ai_gateway:
     runs-on: ubuntu-latest
     outputs:
       outputA: 'hello'
       outputB: 'goodbye'
-
     steps:
-      - name: print
+      - name: enable_default_load_balancing
+        run: echo "Successfully enabled load balancing."    
+      - name: enable_token_limits
+        run: echo "Added token limits to Gen AI Gateway"
+      - name: enable_metrics
+        run: echo "Enable metrics"
+      - name: finished
         run: echo "The Gen AI Gateway is now enabled for this application."
