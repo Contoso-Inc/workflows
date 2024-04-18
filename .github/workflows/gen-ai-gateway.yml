@@ -4,18 +4,20 @@ on:
   workflow_dispatch:
     inputs:
       enable_token_limits:
-        description: Would you like to enable the default token limits?
-        type: boolean
+        description: How many tokens-per-minute would you like to request? (Please note that requests for tokens above nnn will require approval from the Contoso AI team.)
+        type: number
+        required: true
+        default: 1001
+      enable_toekn_metrics:
+        description: Please select which token metrics to enable:
+        type: choice
         required: false
-        default: true
-      enable_load_balancing:
-        description: Would you like to enable the load balancing?
-        type: boolean
-        required: false
-        default: true
+        options:
+          - 'API ID'
+          - 'Operation ID'
+          - 'Subscription ID'
 env:
-  description: This workflow is used to enable the Gen AI Gateway for an intelligent app. It will update the application AI endpoint to flow traffic through the Gen AI Gateway, enabling load balancing, token usage metrics, and 
-
+  description: This workflow is used to apply the OpenAI Token Limit Policy for your intelligent app. It leverages the Gen AI Gateway to apply Contoso's token limits. The supported models are text-embedding-3-large, text-embedding-3-small, text-embedding-ada-002. The default token limit is XYZ. Please note that requests for tokens above nnn will require approval from the Contoso AI team. 
 jobs:
   test:
     runs-on: ubuntu-latest
