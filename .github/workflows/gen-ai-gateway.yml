@@ -3,19 +3,26 @@ name: Gen AI Gateway
 on:
   workflow_dispatch:
     inputs:
+      enable_default_loadbalancing:
+        description: The default load balancing is 'pool' and will route traffic to a new backend.  
+        type: boolean
+        required: true
+        default: true
       enable_token_limits:
         description: How many tokens-per-minute would you like to request? (Please note that requests for tokens above nnn will require approval from the Contoso AI team.)
         type: number
         required: true
         default: 1001
-      enable_token_metrics:
-        description: Please select which token metrics to enable
-        type: choice
+      enable_default_token_metrics:
+        description: The default dimensions for AI Token metrics are API ID, Operation ID, Location ID, and Gateway ID. 
+        type: boolean
         required: false
-        options:
-          - 'API ID'
-          - 'Operation ID'
-          - 'Subscription ID'
+        default: true
+      enable_userid_token_metrics:
+        description: Select this option to enable the 'User ID' metric dimension. 
+        type: boolean
+        required: false
+        default: false
 env:
   description: This workflow is used to apply the OpenAI Token Limit Policy for your intelligent app. It leverages the Gen AI Gateway to apply Contoso's token limits. The supported models are text-embedding-3-large, text-embedding-3-small, text-embedding-ada-002. The default token limit is XYZ. Please note that requests for tokens above nnn will require approval from the Contoso AI team. 
 jobs:
