@@ -1,13 +1,8 @@
-name: Gen AI Gateway
+name: Enable OpenAI Token Limits and Token Metrics
 
 on:
   workflow_dispatch:
     inputs:
-      enable_default_loadbalancing:
-        description: The default load balancing is 'pool' and will route traffic to a new backend.  
-        type: boolean
-        required: true
-        default: true
       enable_token_limits:
         description: How many tokens-per-minute would you like to request? (Please note that requests for tokens above nnn will require approval from the Contoso AI team.)
         type: number
@@ -24,7 +19,7 @@ on:
         required: false
         default: false
 env:
-  description: This workflow is used to apply the OpenAI Token Limit Policy for your intelligent app. It leverages the Gen AI Gateway to apply Contoso's token limits. The supported models are text-embedding-3-large, text-embedding-3-small, text-embedding-ada-002. The default token limit is XYZ. Please note that requests for tokens above nnn will require approval from the Contoso AI team. 
+  description: This workflow is used to apply the default Contoso token limit policy and token metrics. The supported models are text-embedding-3-large, text-embedding-3-small, text-embedding-ada-002. The default token limit is XYZ. Please note that requests for tokens above nnn will require approval from the Contoso AI team. 
 jobs:
   enable_gen_ai_gateway:
     runs-on: ubuntu-latest
@@ -32,11 +27,9 @@ jobs:
       outputA: 'hello'
       outputB: 'goodbye'
     steps:
-      - name: enable_default_load_balancing
-        run: echo "Successfully enabled load balancing."    
       - name: enable_token_limits
         run: echo "Added token limits to Gen AI Gateway"
       - name: enable_metrics
-        run: echo "Enable metrics"
+        run: echo "Enable token metrics"
       - name: finished
-        run: echo "The Gen AI Gateway is now enabled for this application."
+        run: echo "Token limits and metrics are now enabled for this application."
