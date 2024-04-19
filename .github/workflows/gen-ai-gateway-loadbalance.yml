@@ -42,5 +42,5 @@ jobs:
           title: Message from Contoso Platform Engineering Team
           summary: OpenAI Load Balancing
           text: "Hi team, your application has had the Multi-region North America load balancing backend applied." 
-          sections: '[{ "activityTitle": "Load Balacing Policy Applied" },{"activityImage":"https://logos-world.net/wp-content/uploads/2023/10/Microsoft-Copilot-Logo-500x281.png"},{ "activitySubtitle":${{inputs.openai_loadbalancing_backend}} },{ "activityText":"Successfully applied the load balacing backend." }]'
+          sections: '[{ "activityTitle": "Load Balacing Policy Applied" },{"activityImage":"https://logos-world.net/wp-content/uploads/2023/10/Microsoft-Copilot-Logo-500x281.png"},{ "activitySubtitle":"${{inputs.openai_loadbalancing_backend}}" },{ "activityText":"Successfully applied the load balacing backend." }]'
           actions: '[{ "@type": "OpenUri", "name": "GoTo Repo", "targets": [{ "os": "default", "uri": "https://github.com/microsoft/developer-platform" }]}]'
