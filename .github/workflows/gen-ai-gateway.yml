@@ -28,7 +28,7 @@ jobs:
       outputB: 'goodbye'
     steps:
       - name: enable_token_limits
-        run: echo "Added token limits to Gen AI Gateway"
+        run: echo "Added token limits to the application"
       - name: enable_metrics
         run: echo "Enable token metrics"
       - name: finished
