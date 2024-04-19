@@ -16,7 +16,7 @@ on:
 env:
   description: This workflow will add additional OpenAI capacity to your application. It will update your OpenAI endpoint to an approved backend configured by the Contoso OpenAI team. 
 jobs:
-  enable_gen_ai_gateway:
+  enable_openai_loadbalancing:
     runs-on: ubuntu-latest
     outputs:
       outputA: 'hello'
