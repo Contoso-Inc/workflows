@@ -26,3 +26,21 @@ jobs:
         run: echo "Added load balancing"
       - name: finished  
         run: echo "Successful application of load balancing"
+  notify_team:
+    environment: ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    outputs:
+      outputA: 'hello'
+      outputB: 'goodbye'
+
+    steps:
+      - run: echo "### Hello ${{ inputs.name }}! :rocket:" >> $GITHUB_STEP_SUMMARY
+      - name: Notify Team
+        uses: aliencube/microsoft-teams-actions@v0.8.0
+        with:
+          webhook_uri: ${{ secrets.PLATYWEBHOOKURL }}
+          title: Message from Contoso Platform Engineering Team
+          summary: OpenAI Load Balancing
+          text: "Hi team, your application has had the Multi-region North America load balancing backend applied." 
+          sections: '[{ "activityTitle": "Load Balacing Policy Applied" },{"activityImage":"https://logos-world.net/wp-content/uploads/2023/10/Microsoft-Copilot-Logo-500x281.png"},{ "activitySubtitle":"Multi-region North America" },{ "activityText":"Successfully applied the load balacing backen." }]'
+          actions: '[{ "@type": "OpenUri", "name": "GoTo Repo", "targets": [{ "os": "default", "uri": "https://github.com/microsoft/developer-platform" }]}]'
