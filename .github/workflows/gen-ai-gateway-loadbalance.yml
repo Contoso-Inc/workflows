@@ -1,0 +1,28 @@
+name: Enable OpenAI Load Balancing
+
+on:
+  workflow_dispatch:
+    inputs:
+      increase_default_region_capacity:
+        description: Select the desired load balancing backend 
+        type: choice
+        options: 
+          - "Multi-region North America" 
+          - "Single-region North America"
+          - "Global"
+        required: true
+        default: "Multi-region North America"
+
+env:
+  description: This workflow will add additional OpenAI capacity to your application. It will update your OpenAI endpoint to an approved backend configured by the Contoso OpenAI team. 
+jobs:
+  enable_gen_ai_gateway:
+    runs-on: ubuntu-latest
+    outputs:
+      outputA: 'hello'
+      outputB: 'goodbye'
+    steps:
+      - name: enable_load_balancing
+        run: echo "Added load balancing"
+      - name: finished  
+        run: echo "Successful application of load balancing"
