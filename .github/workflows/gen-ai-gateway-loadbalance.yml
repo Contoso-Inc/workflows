@@ -1,4 +1,4 @@
-name: Enable OpenAI Load Balancing
+name: TEST - Enable OpenAI Load Balancing
 
 on:
   workflow_dispatch:
