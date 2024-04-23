@@ -1,4 +1,4 @@
-name: Enable OpenAI Token Limits and Token Metrics
+name: TEST - Enable OpenAI Token Limits and Token Metrics
 
 on:
   workflow_dispatch:
