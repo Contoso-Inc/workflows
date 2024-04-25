@@ -1,13 +1,13 @@
-name: Entity Inputs
+name: General Inputs
 
 on:
   workflow_dispatch:
     inputs:
-      repository:
+      regular_string:
         description: Select a repository
         type: string
         required: true
-      environment_picker:
+      choice_picker:
         description: Select an environment
         type: choice
         required: false
@@ -18,7 +18,7 @@ on:
           - production
 
 env:
-  description: This workflow is used to test entity inputs that resolve to entity references.
+  description: This workflow is used to test a few different types of inputs.
 
 jobs:
   talk:
