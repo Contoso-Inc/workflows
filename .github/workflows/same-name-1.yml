@@ -9,7 +9,7 @@ on:
         description: What kind of food would you like?
         type: string
         required: true
-      fries_with_that:
+      fries:
         description: Fries?
         type: choice
         required: true
