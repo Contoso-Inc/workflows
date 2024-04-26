@@ -1,0 +1,27 @@
+name: Same Name
+
+run-name: Same Name - ${{ inputs.food }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      food:
+        description: What kind of food would you like?
+        type: string
+        required: true
+      fries_with_that:
+        description: Would you like fries with that?
+        type: choice
+        required: true
+        options:
+            - yes
+            - yes
+
+env:
+  description: One of two duplicate templates to test this scenario.
+    
+jobs:
+  talk:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "### Enjoy your ${{ inputs.food }}! :food:" >> $GITHUB_STEP_SUMMARY
