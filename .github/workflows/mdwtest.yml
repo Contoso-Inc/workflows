@@ -1,4 +1,4 @@
-name: MDW Sample Template
+name: MDW Test Workflow
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ on:
         required: false
 
 env:
-  description: Marks test workflow.This workflow is used to test entity inputs that resolve to entity references.
+  description: Marks test workflow.
 
 jobs:
   log:

@@ -11,7 +11,7 @@ on:
       - 'feature/*'
 
 env:
-  description: This workflow is used to test the GitHub Actions API. It does not do anything useful, but it can be triggered quickly because it has not inputs.
+  description: This is an empty template used to test the GitHub Actions API. It does not do anything useful, but it can be triggered quickly because it has not inputs.
 
 jobs:
   test:
