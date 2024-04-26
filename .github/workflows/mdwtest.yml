@@ -1,4 +1,4 @@
-name: Sample Template
+name: MDW Sample Template
 
 on:
   workflow_dispatch:

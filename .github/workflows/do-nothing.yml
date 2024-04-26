@@ -1,4 +1,4 @@
-name: Empty
+name: Do Nothing
 
 on:
   workflow_dispatch:
