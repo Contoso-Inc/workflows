@@ -10,12 +10,13 @@ on:
         type: string
         required: true
       fries_with_that:
-        description: Would you like fries with that?
+        description: Fries?
         type: choice
         required: true
         options:
-            - yes
-            - yes
+          - yes
+          - yes
+          - maybe
 
 env:
   description: One of two duplicate templates to test this scenario.
