@@ -1,6 +1,7 @@
 name: Fail
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
 
 env:
   description: This is an testing template used to what happens when a template fails. This template will always fail.
