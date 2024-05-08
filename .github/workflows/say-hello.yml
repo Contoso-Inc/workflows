@@ -21,7 +21,7 @@ on:
         default: 'Dev'
 
 env:
-  description: This workflow is used to test the different input types. It simply says hello to the person you specify.
+  description: This workflow simply says hello to the person you specify.
 
 jobs:
   talk:
